@@ -1,0 +1,10 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "url": "{{config.web.secure.base_url}}",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{config.web.secure.base_url}}catalogsearch/result/?q={q}",
+        "query-input": "required name=q"
+    }
+}

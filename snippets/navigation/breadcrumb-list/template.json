@@ -1,0 +1,12 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": {
+        "@djson for breadcrumbs as breadcrumb": {
+            "@type": "ListItem",
+            "position": "{{breadcrumb.position}}",
+            "name": "{{breadcrumb.label}}",
+            "item": "{{breadcrumb.link}}"
+        }
+    }
+}

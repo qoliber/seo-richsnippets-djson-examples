@@ -1,0 +1,22 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Store",
+    "name": "{{config.general.store_information.name}}",
+    "image": "{{config.web.secure.base_url}}media/store/storefront.jpg",
+    "telephone": "{{config.general.store_information.phone}}",
+    "address": "{{snippet.organization-address}}",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7128",
+        "longitude": "-74.0060"
+    },
+    "url": "{{config.web.secure.base_url}}",
+    "openingHoursSpecification": {
+        "@djson for storeHours as hours": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "{{hours.day}}",
+            "opens": "{{hours.open}}",
+            "closes": "{{hours.close}}"
+        }
+    }
+}

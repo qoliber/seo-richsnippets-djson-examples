@@ -1,0 +1,7 @@
+{
+    "@type": "PostalAddress",
+    "streetAddress": "123 Example Street",
+    "addressLocality": "Springfield",
+    "postalCode": "12345",
+    "addressCountry": "US"
+}

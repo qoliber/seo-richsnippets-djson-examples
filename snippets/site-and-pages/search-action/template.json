@@ -1,0 +1,8 @@
+{
+    "@type": "SearchAction",
+    "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{config.web.secure.base_url}}catalogsearch/result/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+}

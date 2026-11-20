@@ -1,0 +1,27 @@
+{
+    "@type": "Offer",
+    "url": "https://www.example.com/cruise-dual-analog-watch.html",
+    "price": 55,
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "USD"
+        },
+        "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+        }
+    },
+    "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+    }
+}

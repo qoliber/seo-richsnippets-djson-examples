@@ -1,0 +1,100 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Cruise Dual Analog Watch",
+    "description": "Whether you're traveling or wish you were, you'll never let time zones perplex you again with the Cruise Dual Analog Watch. The thick, adjustable band promises a comfortable, personalized fit to this classy, modern time piece. Two dials. Stainless steel case. Adjustable leather band.",
+    "sku": "24-MG05",
+    "image": "https://www.example.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/m/g/mg05-br-0.jpg",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.example.com/cruise-dual-analog-watch.html",
+        "price": 55,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": 0,
+                "currency": "USD"
+            },
+            "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "US"
+            }
+        },
+        "hasMerchantReturnPolicy": {
+            "@type": "MerchantReturnPolicy",
+            "applicableCountry": "US",
+            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+            "merchantReturnDays": 30,
+            "returnMethod": "https://schema.org/ReturnByMail",
+            "returnFees": "https://schema.org/FreeReturn"
+        }
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.3",
+        "reviewCount": "4",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Frank"
+            },
+            "reviewBody": "When I'm in another country, I hate not knowing what time it really is back home so the dual time zone settings are awesome!",
+            "datePublished": "2026-09-23 20:16:20"
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "4",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Jamie"
+            },
+            "reviewBody": "Really perfect for my needs. I travel a ton, so I'll always know what time to give my wife a call back home.",
+            "datePublished": "2026-09-23 20:16:20"
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "2",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Bobby"
+            },
+            "reviewBody": "I really like the modern look of this watch, but I could only get one time zone to work. I hope it has a warranty because I'm sending it back!",
+            "datePublished": "2026-09-23 20:16:20"
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "2",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Tommie"
+            },
+            "reviewBody": "This watch is so tight around my wrist! I don't care if it's adjustable, it cuts off my circulation.",
+            "datePublished": "2026-09-23 20:16:20"
+        }
+    ]
+}

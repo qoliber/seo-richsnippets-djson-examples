@@ -1,0 +1,8 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "AboutPage",
+    "name": "About Us",
+    "description": "Learn more about our company and mission",
+    "url": "{{config.web.secure.base_url}}about-us",
+    "mainEntity": "{{snippet.organization}}"
+}

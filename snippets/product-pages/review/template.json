@@ -1,0 +1,9 @@
+{
+    "@type": "Review",
+    "@djson if review.rating": {
+        "reviewRating": { "@type": "Rating", "ratingValue": "{{review.rating}}", "bestRating": "5" }
+    },
+    "author": { "@type": "Person", "name": "{{review.nickname}}" },
+    "reviewBody": "{{review.detail}}",
+    "datePublished": "{{review.createdAt}}"
+}

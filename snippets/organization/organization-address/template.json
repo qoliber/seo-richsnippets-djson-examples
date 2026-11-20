@@ -1,0 +1,7 @@
+{
+    "@type": "PostalAddress",
+    "streetAddress": "{{config.general.store_information.street_line1}}",
+    "addressLocality": "{{config.general.store_information.city}}",
+    "postalCode": "{{config.general.store_information.postcode}}",
+    "addressCountry": "{{config.general.store_information.country_id}}"
+}

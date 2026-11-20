@@ -1,0 +1,12 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "ItemList",
+    "itemListElement": {
+        "@djson for products as product": {
+            "@type": "ListItem",
+            "position": "{{product.position}}",
+            "url": "{{product.productUrl}}",
+            "name": "{{product.name}}"
+        }
+    }
+}

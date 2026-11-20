@@ -1,0 +1,30 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is your return policy?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We accept returns within 30 days of purchase. Items must be unused and in original packaging."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does shipping take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard shipping takes 5-7 business days. Express shipping is available for 2-3 day delivery."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you ship internationally?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we ship to most countries worldwide. International shipping times vary by destination."
+            }
+        }
+    ]
+}

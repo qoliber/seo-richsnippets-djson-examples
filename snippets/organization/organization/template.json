@@ -1,0 +1,15 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "name": "{{config.general.store_information.name}}",
+    "url": "{{config.web.secure.base_url}}",
+    "logo": "{{config.web.secure.base_url}}media/logo/default/logo.svg",
+    "address": "{{snippet.organization-address}}",
+    "sameAs": "{{snippet.organization-social-links}}",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "{{config.general.store_information.phone}}",
+        "email": "{{config.trans_email.ident_general.email}}"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "HowTo",
+    "name": "How to Set Up Your New Product",
+    "description": "Step-by-step guide to setting up and configuring your new purchase",
+    "image": "{{config.web.secure.base_url}}media/howto/setup-guide.jpg",
+    "totalTime": "PT15M",
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Unpack the product",
+            "text": "Carefully remove the product from its packaging and check all components are included",
+            "position": 1
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Connect power",
+            "text": "Plug the power cable into the device and connect to a power outlet",
+            "position": 2
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Initial configuration",
+            "text": "Follow the on-screen instructions to complete the initial setup",
+            "position": 3
+        }
+    ]
+}

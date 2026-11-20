@@ -1,0 +1,19 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "LocalBusiness",
+    "name": "{{config.general.store_information.name}}",
+    "description": "{{store.description}}",
+    "telephone": "{{config.general.store_information.phone}}",
+    "email": "{{config.trans_email.ident_general.email}}",
+    "url": "{{config.web.secure.base_url}}",
+    "logo": "{{config.web.secure.base_url}}media/logo/default/logo.svg",
+    "image": "{{config.web.secure.base_url}}media/store/storefront.jpg",
+    "address": "{{snippet.organization-address}}",
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7128",
+        "longitude": "-74.0060"
+    },
+    "openingHours": "Mo-Fr 10:00-18:00",
+    "priceRange": "$$"
+}

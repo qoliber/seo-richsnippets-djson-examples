@@ -1,0 +1,25 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{product.name}}",
+    "description": "{{product.shortDescription}}",
+    "sku": "{{product.sku}}",
+    "image": "{{product.image}}",
+    "@djson if product.manufacturer": {
+        "brand": {
+            "@type": "Brand",
+            "name": "{{product.manufacturer}}"
+        }
+    },
+    "@djson if commerce.offer": {
+        "offers": "{{snippet.offer}}"
+    },
+    "@djson if product.ratingValue": {
+        "aggregateRating": "{{snippet.aggregate-rating}}"
+    },
+    "@djson if product.reviewCount": {
+        "review": {
+            "@djson for productReviews as review": "{{snippet.review}}"
+        }
+    }
+}

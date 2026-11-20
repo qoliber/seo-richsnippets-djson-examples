@@ -1,0 +1,19 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{product.name}}",
+    "sku": "{{product.sku}}",
+    "offers": {
+        "@type": "Offer",
+        "price": "{{product.finalPrice}}",
+        "priceCurrency": "{{store.currencyCode}}",
+        "availability": "https://schema.org/InStock",
+        "url": "{{product.productUrl}}",
+        "@djson if merchant.shippingDetails": {
+            "shippingDetails": "{{snippet.shipping-rate-settings}}"
+        },
+        "@djson if merchant.returnPolicy": {
+            "hasMerchantReturnPolicy": "{{snippet.merchant-return-policy}}"
+        }
+    }
+}

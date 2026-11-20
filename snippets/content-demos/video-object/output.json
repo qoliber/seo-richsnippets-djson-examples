@@ -1,0 +1,11 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "VideoObject",
+    "name": "Product Demo and Review",
+    "description": "Watch our comprehensive product demonstration and in-depth review",
+    "thumbnailUrl": "https://www.example.com/media/video/thumbnail.jpg",
+    "uploadDate": "2024-01-15T10:00:00+00:00",
+    "duration": "PT5M30S",
+    "contentUrl": "https://www.example.com/media/video/demo.mp4",
+    "embedUrl": "https://www.youtube.com/embed/example"
+}

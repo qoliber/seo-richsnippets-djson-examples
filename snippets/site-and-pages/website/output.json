@@ -1,0 +1,10 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "url": "https://www.example.com/",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.example.com/catalogsearch/result/?q={q}",
+        "query-input": "required name=q"
+    }
+}

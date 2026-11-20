@@ -1,0 +1,15 @@
+{
+    "@djson if commerce.offer": {
+        "@type": "Offer",
+        "url": "{{commerce.offer.url}}",
+        "price": "{{commerce.offer.price}}",
+        "priceCurrency": "{{commerce.offer.priceCurrency}}",
+        "availability": "{{commerce.offer.availability}}",
+        "@djson if merchant.shippingDetails": {
+            "shippingDetails": "{{snippet.shipping-details}}"
+        },
+        "@djson if merchant.returnPolicy": {
+            "hasMerchantReturnPolicy": "{{snippet.merchant-return-policy}}"
+        }
+    }
+}
