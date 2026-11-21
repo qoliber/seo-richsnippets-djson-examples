@@ -1,6 +1,6 @@
 # WebPage
 
-A generic web page with the organization as publisher.
+The page it is published on: its title, meta description and URL, with the organization as publisher.
 
 | | |
 |---|---|
@@ -13,7 +13,7 @@ A generic web page with the organization as publisher.
 
 ## What it publishes
 
-A WebPage node whose `publisher` is the included **organization**.
+`page.title`, `page.description` and `page.url` are the current page's title, meta description and canonical URL (or its URL without the query), each published only when set. The example output is the home page.
 
 ## Template
 
@@ -23,18 +23,27 @@ A WebPage node whose `publisher` is the included **organization**.
 {
     "@context": "https://schema.org/",
     "@type": "WebPage",
-    "name": "{{page.title}}",
-    "description": "{{page.description}}",
-    "url": "{{page.url}}",
+    "@djson if page.title": {
+        "name": "{{page.title}}"
+    },
+    "@djson if page.description": {
+        "description": "{{page.description}}"
+    },
+    "@djson if page.url": {
+        "url": "{{page.url}}"
+    },
     "publisher": "{{snippet.organization}}"
 }
 ```
 
 ## Variables and directives
 
-- `{{page.title}}`: no value in 2.6.2 (renders null).
-- `{{page.description}}`: no value in 2.6.2 (renders null).
-- `{{page.url}}`: no value in 2.6.2 (renders null).
+- `@djson if page.title`: the block is published only when the page has a title.
+- `@djson if page.description`: the block is published only when the page has a meta description.
+- `@djson if page.url`: the block is published only when the page has a URL.
+- `{{page.title}}`: the page title.
+- `{{page.description}}`: the page meta description.
+- `{{page.url}}`: the canonical URL, or the current URL without its query.
 - `{{snippet.organization}}`: the rendered JSON of the [`organization`](../../organization/organization/) template, when it is active.
 
 All variables: [docs/variables.md](../../../docs/variables.md).
@@ -48,9 +57,9 @@ Rendered by the module on the home page of the example store.
 {
     "@context": "https://schema.org/",
     "@type": "WebPage",
-    "name": null,
-    "description": null,
-    "url": null,
+    "name": "Home Page",
+    "description": "Example Store: outdoor gear, bags and apparel.",
+    "url": "https://www.example.com/",
     "publisher": {
         "@context": "https://schema.org/",
         "@type": "Organization",
@@ -83,5 +92,5 @@ Rendered by the module on the home page of the example store.
 
 ## Good to know
 
-- `{{page.title}}`, `{{page.description}}` and `{{page.url}}` have no value in Rich Snippets 2.6.2, so they render `null`. Write them as text for the page you target, or leave the template off.
+- Rich Snippets 2.6.2 and earlier had no `page.*` values, so this template published `null` (GitLab seo-rich-snippets#4). 2.7.0 provides them and updates the unedited shipped template.
 - Has no page type: choose where it appears.

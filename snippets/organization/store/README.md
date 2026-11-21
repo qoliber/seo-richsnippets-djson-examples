@@ -1,6 +1,6 @@
 # Store
 
-A retail shop with its address, coordinates and weekly opening hours.
+A retail shop with its address, opening hours and price range from Store Information.
 
 | | |
 |---|---|
@@ -13,7 +13,7 @@ A retail shop with its address, coordinates and weekly opening hours.
 
 ## What it publishes
 
-Uses Store Information for the name, phone and address.
+Name, phone, address, opening hours and price range from Store Information, each published only when set.
 
 ## Template
 
@@ -23,36 +23,34 @@ Uses Store Information for the name, phone and address.
 {
     "@context": "https://schema.org/",
     "@type": "Store",
-    "name": "{{config.general.store_information.name}}",
-    "image": "{{config.web.secure.base_url}}media/store/storefront.jpg",
-    "telephone": "{{config.general.store_information.phone}}",
-    "address": "{{snippet.organization-address}}",
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
+    "@djson if config.general.store_information.name": {
+        "name": "{{config.general.store_information.name}}"
     },
+    "@djson if config.general.store_information.phone": {
+        "telephone": "{{config.general.store_information.phone}}"
+    },
+    "address": "{{snippet.organization-address}}",
     "url": "{{config.web.secure.base_url}}",
-    "openingHoursSpecification": {
-        "@djson for storeHours as hours": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "{{hours.day}}",
-            "opens": "{{hours.open}}",
-            "closes": "{{hours.close}}"
-        }
+    "@djson if config.general.store_information.hours": {
+        "openingHours": "{{config.general.store_information.hours}}"
+    },
+    "@djson if config.general.store_information.price_range": {
+        "priceRange": "{{config.general.store_information.price_range}}"
     }
 }
 ```
 
 ## Variables and directives
 
-- `@djson for storeHours as hours`: one entry per item of `storeHours`, no data in 2.6.2: the loop renders an empty list.
+- `@djson if config.general.store_information.name`: the block is published only when a store name is set.
+- `@djson if config.general.store_information.phone`: the block is published only when a phone number is set.
+- `@djson if config.general.store_information.hours`: the block is published only when Store Hours of Operation is set.
+- `@djson if config.general.store_information.price_range`: the block is published only when Price Range is set.
 - `{{config.general.store_information.name}}`: Store Information → Store Name.
-- `{{config.web.secure.base_url}}`: secure base URL.
 - `{{config.general.store_information.phone}}`: Store Information → Phone.
-- `{{hours.day}}`: loop item of storeHours (no data in 2.6.2).
-- `{{hours.open}}`: loop item of storeHours (no data in 2.6.2).
-- `{{hours.close}}`: loop item of storeHours (no data in 2.6.2).
+- `{{config.web.secure.base_url}}`: secure base URL.
+- `{{config.general.store_information.hours}}`: Store Information → Store Hours of Operation.
+- `{{config.general.store_information.price_range}}`: Store Information → Price Range.
 - `{{snippet.organization-address}}`: the rendered JSON of the [`organization-address`](../../organization/organization-address/) template, when it is active.
 
 All variables: [docs/variables.md](../../../docs/variables.md).
@@ -67,7 +65,6 @@ Rendered by the module on the home page of the example store.
     "@context": "https://schema.org/",
     "@type": "Store",
     "name": "Example Store",
-    "image": "https://www.example.com/media/store/storefront.jpg",
     "telephone": "+1 555 0100",
     "address": {
         "@type": "PostalAddress",
@@ -76,18 +73,13 @@ Rendered by the module on the home page of the example store.
         "postalCode": "12345",
         "addressCountry": "US"
     },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
-    },
     "url": "https://www.example.com/",
-    "openingHoursSpecification": []
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "priceRange": "$$"
 }
 ```
 
 ## Good to know
 
-- The coordinates and the image path are placeholders.
-- `storeHours` has no data in Rich Snippets 2.6.2, so `openingHoursSpecification` renders an empty list. Write the hours as fixed `OpeningHoursSpecification` objects instead.
+- Since Rich Snippets 2.7.0 the template has no placeholder coordinates or image, and no opening-hours loop without data.
 - Has no page type: choose where it appears, for example a CMS page or a custom URL pattern.

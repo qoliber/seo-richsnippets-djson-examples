@@ -1,7 +1,15 @@
 {
     "@type": "PostalAddress",
-    "streetAddress": "{{config.general.store_information.street_line1}}",
-    "addressLocality": "{{config.general.store_information.city}}",
-    "postalCode": "{{config.general.store_information.postcode}}",
-    "addressCountry": "{{config.general.store_information.country_id}}"
+    "@djson if config.general.store_information.street_line1": {
+        "streetAddress": "{{config.general.store_information.street_line1}}"
+    },
+    "@djson if config.general.store_information.city": {
+        "addressLocality": "{{config.general.store_information.city}}"
+    },
+    "@djson if config.general.store_information.postcode": {
+        "postalCode": "{{config.general.store_information.postcode}}"
+    },
+    "@djson if config.general.store_information.country_id": {
+        "addressCountry": "{{config.general.store_information.country_id}}"
+    }
 }

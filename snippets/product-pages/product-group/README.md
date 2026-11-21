@@ -123,7 +123,7 @@ Rendered by the module on the product page of *Radiant Tee* (configurable produc
                 "name": "Lakeisha"
             },
             "reviewBody": "What I rally love here is that it does the job of keeping me cool and dry.  I'm a big guy and sweat A LOT! Even after a day of gulf, I'm still dry and comfortable. The problem is that the sleeves are very tight - actually bought a second shirt because i split the armpit/sleeve area of the first. Do yourself a favor and order a size bigger.  ",
-            "datePublished": "2026-09-23 20:16:22"
+            "datePublished": "2026-09-23T22:16:22+02:00"
         },
         {
             "@type": "Review",
@@ -137,7 +137,7 @@ Rendered by the module on the product page of *Radiant Tee* (configurable produc
                 "name": "Collette"
             },
             "reviewBody": "Not great - buttons are too small and hurt my fingers trying to button it. I've seen better designs...",
-            "datePublished": "2026-09-23 20:16:22"
+            "datePublished": "2026-09-23T22:16:22+02:00"
         },
         {
             "@type": "Review",
@@ -151,7 +151,7 @@ Rendered by the module on the product page of *Radiant Tee* (configurable produc
                 "name": "Adaline"
             },
             "reviewBody": "What a versatile shirt! Not only does it feel very soft compared to my old worn out polos, but it also does the job promised. I like going out after my gamefor drinks so I look good then too and don't need to change into something fresh. ",
-            "datePublished": "2026-09-23 20:16:22"
+            "datePublished": "2026-09-23T22:16:22+02:00"
         }
     ]
 }

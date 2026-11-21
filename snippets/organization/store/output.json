@@ -2,7 +2,6 @@
     "@context": "https://schema.org/",
     "@type": "Store",
     "name": "Example Store",
-    "image": "https://www.example.com/media/store/storefront.jpg",
     "telephone": "+1 555 0100",
     "address": {
         "@type": "PostalAddress",
@@ -11,11 +10,7 @@
         "postalCode": "12345",
         "addressCountry": "US"
     },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
-    },
     "url": "https://www.example.com/",
-    "openingHoursSpecification": []
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "priceRange": "$$"
 }

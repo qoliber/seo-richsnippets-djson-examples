@@ -13,7 +13,7 @@ Your postal address from Store Information.
 
 ## What it publishes
 
-Street (line 1), city, postcode and country from Store Information.
+Street (line 1), city, postcode and country from Store Information; a field that is not set is left out.
 
 ## Template
 
@@ -22,15 +22,27 @@ Street (line 1), city, postcode and country from Store Information.
 ```json
 {
     "@type": "PostalAddress",
-    "streetAddress": "{{config.general.store_information.street_line1}}",
-    "addressLocality": "{{config.general.store_information.city}}",
-    "postalCode": "{{config.general.store_information.postcode}}",
-    "addressCountry": "{{config.general.store_information.country_id}}"
+    "@djson if config.general.store_information.street_line1": {
+        "streetAddress": "{{config.general.store_information.street_line1}}"
+    },
+    "@djson if config.general.store_information.city": {
+        "addressLocality": "{{config.general.store_information.city}}"
+    },
+    "@djson if config.general.store_information.postcode": {
+        "postalCode": "{{config.general.store_information.postcode}}"
+    },
+    "@djson if config.general.store_information.country_id": {
+        "addressCountry": "{{config.general.store_information.country_id}}"
+    }
 }
 ```
 
 ## Variables and directives
 
+- `@djson if config.general.store_information.street_line1`: the block is published only when a street is set.
+- `@djson if config.general.store_information.city`: the block is published only when a city is set.
+- `@djson if config.general.store_information.postcode`: the block is published only when a postcode is set.
+- `@djson if config.general.store_information.country_id`: the block is published only when a country is set.
 - `{{config.general.store_information.street_line1}}`: Store Information → Street Address.
 - `{{config.general.store_information.city}}`: Store Information → City.
 - `{{config.general.store_information.postcode}}`: Store Information → ZIP/Postal Code.

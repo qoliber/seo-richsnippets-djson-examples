@@ -61,12 +61,12 @@ Rendered by the module on the product page of *Cruise Dual Analog Watch* (simple
         "name": "Frank"
     },
     "reviewBody": "When I'm in another country, I hate not knowing what time it really is back home so the dual time zone settings are awesome!",
-    "datePublished": "2026-09-23 20:16:20"
+    "datePublished": "2026-09-23T22:16:20+02:00"
 }
 ```
 
 ## Good to know
 
 - Include-only, and only meaningful inside the `productReviews` loop.
-- `datePublished` is Magento's review timestamp, `YYYY-MM-DD HH:MM:SS`.
+- `datePublished` is the review's creation time in ISO 8601, in the store's time zone (Rich Snippets 2.7.0).
 - If this template is inactive, the product leaves out its whole `review` property rather than publishing an empty list.

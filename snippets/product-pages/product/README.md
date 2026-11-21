@@ -127,7 +127,7 @@ Rendered by the module on the product page of *Cruise Dual Analog Watch* (simple
                 "name": "Frank"
             },
             "reviewBody": "When I'm in another country, I hate not knowing what time it really is back home so the dual time zone settings are awesome!",
-            "datePublished": "2026-09-23 20:16:20"
+            "datePublished": "2026-09-23T22:16:20+02:00"
         },
         {
             "@type": "Review",
@@ -141,7 +141,7 @@ Rendered by the module on the product page of *Cruise Dual Analog Watch* (simple
                 "name": "Jamie"
             },
             "reviewBody": "Really perfect for my needs. I travel a ton, so I'll always know what time to give my wife a call back home.",
-            "datePublished": "2026-09-23 20:16:20"
+            "datePublished": "2026-09-23T22:16:20+02:00"
         },
         {
             "@type": "Review",
@@ -155,7 +155,7 @@ Rendered by the module on the product page of *Cruise Dual Analog Watch* (simple
                 "name": "Bobby"
             },
             "reviewBody": "I really like the modern look of this watch, but I could only get one time zone to work. I hope it has a warranty because I'm sending it back!",
-            "datePublished": "2026-09-23 20:16:20"
+            "datePublished": "2026-09-23T22:16:20+02:00"
         },
         {
             "@type": "Review",
@@ -169,7 +169,7 @@ Rendered by the module on the product page of *Cruise Dual Analog Watch* (simple
                 "name": "Tommie"
             },
             "reviewBody": "This watch is so tight around my wrist! I don't care if it's adjustable, it cuts off my circulation.",
-            "datePublished": "2026-09-23 20:16:20"
+            "datePublished": "2026-09-23T22:16:20+02:00"
         }
     ]
 }

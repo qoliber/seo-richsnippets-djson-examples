@@ -1,19 +1,27 @@
 {
     "@context": "https://schema.org/",
     "@type": "LocalBusiness",
-    "name": "{{config.general.store_information.name}}",
-    "description": "{{store.description}}",
-    "telephone": "{{config.general.store_information.phone}}",
-    "email": "{{config.trans_email.ident_general.email}}",
-    "url": "{{config.web.secure.base_url}}",
-    "logo": "{{config.web.secure.base_url}}media/logo/default/logo.svg",
-    "image": "{{config.web.secure.base_url}}media/store/storefront.jpg",
-    "address": "{{snippet.organization-address}}",
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
+    "@djson if config.general.store_information.name": {
+        "name": "{{config.general.store_information.name}}"
     },
-    "openingHours": "Mo-Fr 10:00-18:00",
-    "priceRange": "$$"
+    "@djson if config.design.head.default_description": {
+        "description": "{{config.design.head.default_description}}"
+    },
+    "@djson if config.general.store_information.phone": {
+        "telephone": "{{config.general.store_information.phone}}"
+    },
+    "@djson if config.trans_email.ident_general.email": {
+        "email": "{{config.trans_email.ident_general.email}}"
+    },
+    "url": "{{config.web.secure.base_url}}",
+    "@djson if config.design.header.logo_src": {
+        "logo": "{{config.web.secure.base_url}}media/logo/{{config.design.header.logo_src}}"
+    },
+    "address": "{{snippet.organization-address}}",
+    "@djson if config.general.store_information.hours": {
+        "openingHours": "{{config.general.store_information.hours}}"
+    },
+    "@djson if config.general.store_information.price_range": {
+        "priceRange": "{{config.general.store_information.price_range}}"
+    }
 }

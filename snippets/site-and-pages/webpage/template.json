@@ -1,8 +1,14 @@
 {
     "@context": "https://schema.org/",
     "@type": "WebPage",
-    "name": "{{page.title}}",
-    "description": "{{page.description}}",
-    "url": "{{page.url}}",
+    "@djson if page.title": {
+        "name": "{{page.title}}"
+    },
+    "@djson if page.description": {
+        "description": "{{page.description}}"
+    },
+    "@djson if page.url": {
+        "url": "{{page.url}}"
+    },
     "publisher": "{{snippet.organization}}"
 }

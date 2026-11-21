@@ -30,6 +30,16 @@ On product pages.
 
 **Any product attribute** is available by its code, in camelCase or snake_case: `{{product.urlKey}}` and `{{product.url_key}}` both give `cruise-dual-analog-watch`. For dropdown and multiple-select attributes you get the option label: `{{product.activity}}` gives `Recreation`, not an option ID.
 
+## Current page: `page.*`
+
+On every page (Rich Snippets 2.7.0).
+
+| Variable | Value | Example |
+|---|---|---|
+| `{{page.title}}` | the page title, without the store's title prefix and suffix | `Home Page` |
+| `{{page.description}}` | the meta description (or the store's default description) | `Example Store: outdoor gear, bags and apparel.` |
+| `{{page.url}}` | the canonical URL, or the current URL without its query | `https://www.example.com/` |
+
 ## The offer: `commerce.offer`
 
 On product pages. The single Offer the page makes, at the price it shows, with the store's tax display and currency.
@@ -112,7 +122,7 @@ The editor lists the common ones:
 | Currency | `config.currency.options.base`, `.default`, `.allow` |
 | Base URLs | `config.web.secure.base_url`, `.base_link_url`, `.base_media_url`, `.base_static_url`, and the same under `config.web.unsecure` |
 
-The general contact email is `{{config.trans_email.ident_general.email}}`.
+The general contact email is `{{config.trans_email.ident_general.email}}`, the default meta description `{{config.design.head.default_description}}` and the header logo file `{{config.design.header.logo_src}}`.
 
 ## Store: `store.*`
 
@@ -158,7 +168,8 @@ Use them with `"@djson for list as item"`. Inside the loop, `{{item.field}}` rea
 |---|---|---|
 | `breadcrumbs` | every page; the full trail on category and product pages | `position`, `label`, `link` (the last crumb links to the current page) |
 | `products` | category pages | `position`, `name`, `productUrl` |
-| `productReviews` | product pages | `nickname`, `title`, `detail`, `createdAt`, `rating` (1–5, empty without a vote), `reviewId` |
+| `productReviews` | product pages | `nickname`, `title`, `detail`, `createdAt` (ISO 8601, store time zone), `rating` (1–5, empty without a vote), `reviewId` |
+| `productGallery` | product pages with gallery images | `url` (storefront image URL), `label`, `position` (1, 2, …) |
 | `productTierPrices` | product pages with volume prices | `qtyMin`, `qtyMax` (absent on the last row), `price`, `priceExclTax` |
 | `productVariants` | configurable pages | see [Variants](#variants-variantgroup-productvariants) |
 
@@ -168,13 +179,8 @@ Use them with `"@djson for list as item"`. Inside the loop, `{{item.field}}` rea
 
 `"{{snippet.identifier}}"` pastes in another active snippet by its identifier. See [how snippets work](how-snippets-work.md#1-includes).
 
-## Without a value in Rich Snippets 2.6.2
+## Before Rich Snippets 2.7.0
 
-A few names appear in shipped templates or in the editor but have no data in this version. Replace them with fixed values, or leave them out:
-
-| Name | Where it appears | Renders |
-|---|---|---|
-| `page.title`, `page.description`, `page.url` | **webpage** | `null` |
-| `store.description` | **local-business** | `null` |
-| `storeHours` | **store** | an empty list |
-| `productGallery` | editor panel | an empty list |
+`page.*` and the `productGallery` loop had no data in 2.6.2 and earlier: the shipped **webpage** template published
+`null`, and the shipped **local-business** and **store** templates published placeholders and an empty opening-hours
+list. 2.7.0 supplies them, and updates those templates on stores that never edited them.

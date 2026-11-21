@@ -2,12 +2,11 @@
     "@context": "https://schema.org/",
     "@type": "LocalBusiness",
     "name": "Example Store",
-    "description": null,
+    "description": "Outdoor gear, bags and apparel for every day.",
     "telephone": "+1 555 0100",
     "email": "hello@example.com",
     "url": "https://www.example.com/",
-    "logo": "https://www.example.com/media/logo/default/logo.svg",
-    "image": "https://www.example.com/media/store/storefront.jpg",
+    "logo": "https://www.example.com/media/logo/default/logo.png",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "123 Example Street",
@@ -15,11 +14,6 @@
         "postalCode": "12345",
         "addressCountry": "US"
     },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
-    },
-    "openingHours": "Mo-Fr 10:00-18:00",
+    "openingHours": "Mo-Fr 09:00-17:00",
     "priceRange": "$$"
 }

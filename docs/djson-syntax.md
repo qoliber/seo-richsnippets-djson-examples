@@ -13,12 +13,12 @@ Write a variable as `{{path}}`, with dots for nested values: `{{product.name}}`,
 | `"price": "{{commerce.offer.price}}"` | `"price": 55`. A whole-value variable keeps its type: number, text, object or list. |
 | `"offers": "{{commerce.offer}}"` | the whole Offer object |
 | `"url": "{{config.web.secure.base_url}}about-us"` | `"url": "https://www.example.com/about-us"`. Inside text, the value is pasted in as text. |
-| `"name": "{{page.title}}"` with no value | `"name": null` |
-| `"text": "Call {{store.description}} now"` with no value | `"text": "Call  now"`. The missing value is left out of the text. |
+| `"name": "{{product.subtitle}}"` with no value | `"name": null` |
+| `"text": "Call {{product.subtitle}} now"` with no value | `"text": "Call  now"`. The missing value is left out of the text. |
 
 To leave a property out when there is no value, wrap it in a condition (below) instead of letting it render `null`.
 
-Always quote a variable, even when the value is a number or an object: `"{{commerce.offer.price}}"`, not `{{commerce.offer.price}}`.
+Quote a variable, even when the value is a number or an object: `"{{commerce.offer.price}}"`. That keeps the template valid JSON.
 
 ## Including other snippets
 
@@ -32,7 +32,7 @@ Always quote a variable, even when the value is a number or an object: `"{{comme
 }
 ```
 
-An inactive or missing include is left out of the parent. Includes nest up to five levels deep, and loops between snippets are refused. See [how snippets work](how-snippets-work.md#1-includes).
+The module also accepts a bare include as a whole value (`"address": {{snippet.organization-address}}`), but the quoted form keeps the template valid JSON for editors and validators. An inactive or missing include is left out of the parent. Includes nest up to five levels deep, and loops between snippets are refused. See [how snippets work](how-snippets-work.md#1-includes).
 
 ## Conditions
 
@@ -120,10 +120,26 @@ Inside a loop, you can also use:
 
 The lists you can loop over are in [variables.md](variables.md#lists-for-loops).
 
+## Functions
+
+DJSON's built-in functions are applied in the function form, as a whole value:
+
+```json
+{
+    "name": "@djson upper {{product.name}}",
+    "brand": "@djson default {{product.manufacturer}} 'Example Store'"
+}
+```
+
+`upper`, `lower`, `capitalize`, `title`, `trim`, `escape`, `slug`, `substr`, `replace`, `number_format`, `round`, `ceil`,
+`floor`, `abs`, `date`, `strtotime`, `count`, `first`, `last`, `join`, `sort`, `unique`, `default` and `coalesce` are
+available; DJSON runs them in its sandbox.
+
 ## What is not available
 
-- **Template functions.** DJSON's pipe functions, such as `{{name | upper}}` or `{{title | default('…')}}`, are not available in snippet templates; such a value renders `null`. Use a condition with `else` for fallbacks.
-- **Includes without quotes.** An unquoted `{{snippet.x}}` makes the template invalid JSON.
+- **Pipe expressions.** `{{name | upper}}` and `{{title | default('…')}}` are not applied by the DJSON version the module
+  uses (qoliber/djson 1.5): the whole expression is read as a variable name and renders `null`. The editor flags them, and
+  saving warns. Use the function form above.
 
 ## Tips
 

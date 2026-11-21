@@ -1,9 +1,9 @@
 {
     "@context": "https://schema.org/",
     "@type": "WebPage",
-    "name": null,
-    "description": null,
-    "url": null,
+    "name": "Home Page",
+    "description": "Example Store: outdoor gear, bags and apparel.",
+    "url": "https://www.example.com/",
     "publisher": {
         "@context": "https://schema.org/",
         "@type": "Organization",
